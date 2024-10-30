@@ -7,7 +7,7 @@
             <a class="block" href="#">
               <span class="sr-only">Home</span>
               <img
-                class="w-24 h-20 sm:w-40 md:w-48 sm:h-28 md:h-40"
+                class="w-24 h-20 sm:w-40 md:w-48 sm:h-28 md:h-40 name-logo"
                 src="../assets/images/Black_Outline_Street_Brand_Modern_Typography_Logo-removebg-preview.png"
                 alt="logo"
               />
@@ -39,24 +39,24 @@
           </div>
 
           <div class="hidden lg:flex lg:gap-x-12">
-            <ul class="flex items-center gap-6 text-sm">
-              <li class="hover:scale-125 transition-transform">
-                <a class="nav-link" href="#about"> About </a>
+            <ul class="flex items-center gap-6">
+              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+                <a class="nav-link" href="#about">About</a>
               </li>
-              <li class="hover:scale-125 transition-transform">
-                <a class="nav-link" href="#engagements"> Engagements </a>
+              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+                <a class="nav-link" href="#engagements">Engagements</a>
               </li>
-              <li class="hover:scale-125 transition-transform">
-                <a class="nav-link" href="#projects"> Projects </a>
+              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+                <a class="nav-link" href="#projects">Projects</a>
               </li>
-              <li class="hover:scale-125 transition-transform">
-                <a class="nav-link" href="#contact"> Contact </a>
+              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
           </div>
 
           <!-- Mobile menu, show/hide based on menu open state -->
-          <div v-if="isMenuOpen" class="fixed inset-0 z-10">
+          <div v-if="isMenuOpen" class="fixed inset-0 z-20">
             <div
               class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
             >
@@ -139,11 +139,14 @@
               Wendel Rey Salaum
             </h1>
 
-            <p
-              class="text-gray-300 mx-auto mt-4 max-w-xl sm:text-xl/relaxed tracking-wider font-light"
-            >
-              A CyberSecurity Enthusiast and a Passionate Programmer
-            </p>
+            <div>
+              <TyperComponent  baseText="A CyberSecurity Enthusiast"
+              search="A CyberSecurity Enthusiast"
+              :replace="['A CyberSecurity Enthusiast', 'A Passionate Programmer', 'An Idea Generator', 'A Code Writer',  'A Problem Solver', 'But most of the time, I am the Problem']"
+              :delay="2000"
+              :scrollSpeed="300" />
+            </div>
+            
           </div>
         </div>
       </div>
@@ -173,7 +176,13 @@
 </template>
 
 <script>
+import TyperComponent from './TyperComponent.vue';
+
+
 export default {
+  components: {
+    TyperComponent,
+  },  
   data() {
     return {
       isMenuOpen: false, // Reactive property to track menu state
@@ -191,6 +200,42 @@ export default {
 </script>
 
 <style scoped>
+.name-logo {
+  filter: drop-shadow(0px 5px 20px rgba(25, 190, 255, 0.747));
+}
+.name {
+  animation: shadowMove 4s linear infinite;
+}
+@keyframes shadowMove {
+  0% {
+    filter: drop-shadow(-100px 0px 100px rgba(25, 190, 255, 0.747));
+  }
+  12.5% {
+    filter: drop-shadow(-70px 70px 100px rgba(25, 190, 255, 0.747));
+  }
+  25% {
+    filter: drop-shadow(0px 100px 100px rgba(25, 190, 255, 0.747));
+  }
+  37.5% {
+    filter: drop-shadow(70px 70px 100px rgba(25, 190, 255, 0.747));
+  }
+  50% {
+    filter: drop-shadow(100px 0px 100px rgba(25, 190, 255, 0.747));
+  }
+  62.5% {
+    filter: drop-shadow(70px -70px 100px rgba(25, 190, 255, 0.747));
+  }
+  75% {
+    filter: drop-shadow(0px -100px 100px rgba(25, 190, 255, 0.747));
+  }
+  87.5% {
+    filter: drop-shadow(-70px -70px 100px rgba(25, 190, 255, 0.747));
+  }
+  100% {
+    filter: drop-shadow(-100px 0px 100px rgba(25, 190, 255, 0.747));
+  }
+}
+
 .nav-link {
   padding: 0.5rem 1rem;
   font-size: 0.875rem; /* text-sm */
