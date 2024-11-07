@@ -11,21 +11,37 @@
         from you!
       </p>
       <div v-show="toggled" class="mt-8 max-w-xl mx-auto">
-        <form @submit.prevent="submitForm" class="space-y-6">
+        <form @submit.prevent="submitForm" class="space-y-6" ref="myForm">
           <div>
-            <label for="email" class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
+            <label for="email_id" class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
               >Email</label
             >
             <div class="mt-1">
               <input
                 id="email"
-                name="email"
+                name="email_id"
                 type="email"
                 autocomplete="email"
-                v-model="email"
+                v-model="form.email_id"
                 required
                 class="block w-full px-4 py-3 bg-white text-black placeholder-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Your email"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="from_name" class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
+              >Name</label
+            >
+            <div class="mt-1">
+              <input
+                id="name"
+                name="from_name"
+                v-model="form.from_name"
+                required
+                class="block w-full px-4 py-3 bg-white text-black placeholder-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                placeholder="Your name"
               />
             </div>
           </div>
@@ -39,7 +55,7 @@
                 id="message"
                 name="message"
                 rows="5"
-                v-model="message"
+                v-model="form.message"
                 required
                 class="block w-full px-4 py-3 bg-white text-black placeholder-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Your message"
@@ -72,21 +88,48 @@
 export default {
   data() {
     return {
-      email: "",
-      message: "",
+      form :{
+        from_name: '',
+        email_id: '',
+        message: '',
+      },
       toggled: false,
+      statusMessage: ''
     };
   },
   methods: {
     toggleEmail() {
       this.toggled = !this.toggled;
     },
-    submitForm() {
-      if (this.email && this.message) {
-        // Simulate a form submission process
-        alert(`Email: ${this.email}\nMessage: ${this.message}`);
-        this.email = "";
-        this.message = "";
+    async submitForm() {
+      // Create FormData object and append form inputs and EmailJS parameters
+      const formData = new FormData(this.$refs.myForm);
+      formData.append('service_id', 'service_q6qln5q');
+      formData.append('template_id', 'template_4k3bwlt');
+      formData.append('user_id', 'H2450ePDW3hgk2r22');
+
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`)
+      }
+      try {
+        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          this.statusMessage = 'Your mail is sent!';
+          alert(this.statusMessage);
+          this.form = { name: '', email: '', message: '' }; // Reset the form
+        } else {
+          this.statusMessage = 'Failed to send email. Please try again later.';
+          alert(this.statusMessage);
+          console.error('EmailJS error:', response.statusText);
+        }
+      } catch (error) {
+        this.statusMessage = 'An error occurred. Please try again later.';
+        alert(this.statusMessage);
+        console.error('EmailJS error:', error);
       }
     },
   },
