@@ -16,20 +16,24 @@
         </p>
       </header>
 
-      <ul class="grid grid-cols-1 w-4/5 sm:w-full gap-6 mt-8 sm:grid-cols-3 h-auto mx-auto">
+      <ul
+        class="grid grid-cols-1 w-4/5 sm:w-full gap-6 mt-8 sm:grid-cols-3 h-auto mx-auto"
+      >
         <ListProject>
           <template #image>
             <img
-              src="../assets/images/240488c97e712778d2c6b5f7c6d1900f.jpeg"
-              alt="Project 1 - Brief description"
+              src="../assets/images/business-concept-consulting-illustration.jpg"
+              alt="Project 1 - Organization System"
               class="w-full h-80 object-cover"
             />
           </template>
           <template #info>
-            <h3 class="text-lg font-semibold text-gray-800">Project Title 1</h3>
+            <h3 class="text-lg font-semibold text-gray-800">
+              CSU Orgs Management System
+            </h3>
             <p class="mt-2 text-gray-600">
-              Brief description of Project 1, highlighting its main features and
-              technologies used.
+              A project in ITE-18 to guide the Organizations in CSU in managing
+              requests and responses.
             </p>
           </template>
         </ListProject>
@@ -37,16 +41,16 @@
         <ListProject>
           <template #image>
             <img
-              src="../assets/images/240488c97e712778d2c6b5f7c6d1900f.jpeg"
-              alt="Project 1 - Brief description"
+              src="../assets/images/istockphoto-1374485813-612x612.jpg"
+              alt="Project 2 - Todo List"
               class="w-full h-80 object-cover"
             />
           </template>
           <template #info>
-            <h3 class="text-lg font-semibold text-gray-800">Project Title 1</h3>
+            <h3 class="text-lg font-semibold text-gray-800">Todo List</h3>
             <p class="mt-2 text-gray-600">
-              Brief description of Project 1, highlighting its main features and
-              technologies used.
+              Utilizing Vue and Vuetify to create a functional Todo List
+              application.
             </p>
           </template>
         </ListProject>
@@ -54,16 +58,15 @@
         <ListProject>
           <template #image>
             <img
-              src="../assets/images/240488c97e712778d2c6b5f7c6d1900f.jpeg"
-              alt="Project 1 - Brief description"
+              src="../assets/images/istockphoto-1131418344-612x612.jpg"
+              alt="Project 3 - NASA API"
               class="w-full h-80 object-cover"
             />
           </template>
           <template #info>
-            <h3 class="text-lg font-semibold text-gray-800">Project Title 1</h3>
+            <h3 class="text-lg font-semibold text-gray-800">The Galaxy</h3>
             <p class="mt-2 text-gray-600">
-              Brief description of Project 1, highlighting its main features and
-              technologies used.
+              Utilizing NASA's API to access and retrieve data from NASA.
             </p>
           </template>
         </ListProject>

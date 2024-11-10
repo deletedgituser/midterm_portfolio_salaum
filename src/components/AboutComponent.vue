@@ -13,7 +13,7 @@
           </div>
         </div>
 
-        <div class="relative flex items-center text-background"  @mousemove="handleMouseMove" @mouseleave="resetTilt">
+        <div class="relative flex items-center text-background">
           <div class="p-8 sm:p-16 lg:p-24">
             <h2
               class="text-4xl font-semibold sm:text-4xl md:text-5xl text-white font-effect-anaglyph"
@@ -33,9 +33,7 @@
               problems, and continuously learning to stay ahead in this
               ever-evolving landscape.
             </p>
-            <a
-              href="https://drive.google.com/file/d/1ephvDcasTPdssTJx6CPJdZZ_9v7lC_15/view?usp=sharing"
-              download="WR.CV_CV.pdf"
+            <a href="https://drive.usercontent.google.com/u/0/uc?id=1ephvDcasTPdssTJx6CPJdZZ_9v7lC_15&export=download" download="Wendel_Rey_Salaum_CV.pdf"
               class="bg-cyan-950 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 inline-block"
             >
               Download My CV
@@ -49,39 +47,7 @@
 
 <script>
 export default {
-  data() {
-    return {
-      tilt: {
-        x: 0,
-        y: 0,
-      },
-    };
-  },
-  computed: {
-    transformStyle() {
-      return {
-        transform: `rotateY(${this.tilt.x}deg) rotateX(${this.tilt.y}deg)`,
-      };
-    },
-  },
-  methods: {
-    handleMouseMove(event) {
-      const { clientX, clientY } = event;
-      const { offsetWidth, offsetHeight } = event.currentTarget;
-      const x = (clientX / offsetWidth) * 100; // Percentage of the width
-      const y = (clientY / offsetHeight) * 100; // Percentage of the height
-
-      const tiltX = ((x - 50) / 50) * 10; // Adjust tilt value
-      const tiltY = ((y - 50) / 50) * 10; // Adjust tilt value
-
-      this.tilt.x = tiltX;
-      this.tilt.y = tiltY;
-    },
-    resetTilt() {
-      this.tilt.x = 0;
-      this.tilt.y = 0;
-    },
-  },
+  name: "AboutComponent",
 };
 </script>
 

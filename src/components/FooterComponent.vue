@@ -1,200 +1,138 @@
 <template>
-  <footer class="bg-black text-white lg:grid lg:grid-cols-2">
-    <div class="px-4 py-16 sm:px-6 lg:col-span-2 lg:px-8">
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-        <div>
-          <p>
-            <span class="text-xs uppercase tracking-wider text-gray-300">
-              Contact me
+  <!-- Footer container -->
+  <footer
+    class="bg-zinc-950 text-center text-white lg:text-left"
+  >
+
+    <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
+    <div class="mx-6 py-10 text-center md:text-left">
+      <div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <!-- TW Elements section -->
+        <div class="">
+          <h6
+            class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start"
+          >
+            <span class="me-3 [&>svg]:h-4 [&>svg]:w-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z"
+                />
+              </svg>
             </span>
-            <a
-              href="mailto:youremail@sample.com"
-              class="block text-xl font-medium text-white hover:opacity-75 sm:text-2xl hover:underline underline-offset-4"
-            >
-              del3t_its_m3@gmail.com
-            </a>
+            Wen's Portfolio
+          </h6>
+          <p>
+            A portfolio website made with Vue and Tailwind. 
           </p>
         </div>
+        <!-- Products section -->
         <div>
-          <p>
-            <span class="text-xs uppercase tracking-wider text-gray-500">
-              Let's connect
-            </span>
+          <h6
+            class="mb-4 flex justify-center font-semibold uppercase md:justify-start"
+          >
+            Products
+          </h6>
+          <p class="mb-4">
+            <a href="#!">Angular</a>
           </p>
-          <ul class="mt-1 flex gap-6 justify-center">
-            <li>
-              <a
-                href="https://www.facebook.com/"
-                rel="noreferrer"
-                target="_blank"
-                class="text-gray-700 transition hover:opacity-75"
-                data-te-toggle="tooltip"
-                data-te-placement="top"
-                title="Facebook"
+          <p class="mb-4">
+            <a href="#!">React</a>
+          </p>
+          <p class="mb-4">
+            <a href="#!">Vue</a>
+          </p>
+          <p>
+            <a href="#!">Laravel</a>
+          </p>
+        </div>
+        <!-- Useful links section -->
+        <div>
+          <h6
+            class="mb-4 flex justify-center font-semibold uppercase md:justify-start"
+          >
+            Useful links
+          </h6>
+          <p class="mb-4">
+            <a href="#!">Pricing</a>
+          </p>
+          <p class="mb-4">
+            <a href="#!">Settings</a>
+          </p>
+          <p class="mb-4">
+            <a href="#!">Orders</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+        </div>
+        <!-- Contact section -->
+        <div>
+          <h6
+            class="mb-4 flex justify-center font-semibold uppercase md:justify-start"
+          >
+            Connect With Us
+          </h6>
+          <p class="mb-4 flex items-center justify-center md:justify-start">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
               >
-                <span class="sr-only">Facebook</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  class="main-grid-item-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                class="text-gray-700 transition hover:opacity-75"
-                data-te-toggle="tooltip"
-                title="Instagram"
+                <path
+                  d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+                />
+                <path
+                  d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+                />
+              </svg>
+            </span>
+            Butuan City, Philippines
+          </p>
+          <p class="mb-4 flex items-center justify-center md:justify-start">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
               >
-                <span class="sr-only">Instagram</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  class="main-grid-item-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <rect height="20" rx="5" ry="5" width="20" x="2" y="2" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                class="text-gray-700 transition hover:opacity-75"
-                data-te-toggle="tooltip"
-                title="LinkedIn"
+                <path
+                  fill-rule="evenodd"
+                  d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+            +63 9368 874 8056
+          </p>
+          <p class="flex items-center justify-center md:justify-start">
+            <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
               >
-                <span class="sr-only">LinkedIn</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  class="main-grid-item-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                  />
-                  <rect height="12" width="4" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                class="text-gray-700 transition hover:opacity-75"
-                data-te-toggle="tooltip"
-                title="GitHub"
-              >
-                <span class="sr-only">GitHub</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  class="main-grid-item-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                rel="noreferrer"
-                target="_blank"
-                class="text-gray-700 transition hover:opacity-75"
-                data-te-toggle="tooltip"
-                title="Resume"
-              >
-                <span class="sr-only">Resume</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  class="main-grid-item-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                  />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" x2="8" y1="13" y2="13" />
-                  <line x1="16" x2="8" y1="17" y2="17" />
-                  <polyline points="10 9 9 9 8 9" />
-                </svg>
-              </a>
-            </li>
-          </ul>
+                <path
+                  fill-rule="evenodd"
+                  d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+            + 01 234 567 89
+          </p>
         </div>
       </div>
     </div>
-    <button
-      v-if="isButtonVisible"
-      @click="backToTop"
-      id="backToTopBtn"
-      class="fixed bottom-10 right-10 p-2 rounded-full flex items-center justify-center transition-colors focus:outline-none"
-      title="Back to Top"
-    >
-      <svg
-        class="w-6 h-6"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 10l7-7m0 0l7 7m-7-7v18"
-        />
-      </svg>
-    </button>
+
+    <!--Copyright section-->
+    <div class="bg-black/5 p-6 text-center">
+      <span>© 2024 WEN's Company. All rights reserved.</span>
+    </div>
   </footer>
 </template>
 

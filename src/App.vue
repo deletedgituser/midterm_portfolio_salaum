@@ -46,6 +46,9 @@ export default {
 .pattern {
   /* background-image: url("https://placehold.co/1280x720"); */
   background-color: #001F3F;
+  /* background: #001f3f;
+  background: -webkit-linear-gradient(174deg, #001f3f 0%, #46016e 100%);
+  background: linear-gradient(174deg, #001f3f 0%, #46016e 100%); */ 
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

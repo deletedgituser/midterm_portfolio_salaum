@@ -40,16 +40,24 @@
 
           <div class="hidden lg:flex lg:gap-x-12">
             <ul class="flex items-center gap-6">
-              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+              <li
+                class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700"
+              >
                 <a class="nav-link" href="#about">About</a>
               </li>
-              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+              <li
+                class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700"
+              >
                 <a class="nav-link" href="#engagements">Engagements</a>
               </li>
-              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+              <li
+                class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700"
+              >
                 <a class="nav-link" href="#projects">Projects</a>
               </li>
-              <li class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700">
+              <li
+                class="hover:scale-125 transition-transform hover:shadow-md hover:shadow-sky-700"
+              >
                 <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
@@ -132,21 +140,31 @@
           class="mx-auto max -w-screen-xl px-4 justify-center text-center flex h-screen items-center"
         >
           <div class="mx-auto max-w-3xl text-center -mt-60">
-            <h1
-              data-text="Wendel Rey Salaum"
-              class="name text-gray-100 bg-clip-text font-normal lg:text-9xl text-7xl tracking-wider font-effect-anaglyph custom-font-1"
-            >
-              Wendel Rey Salaum
-            </h1>
+            <div class="glitch-wrapper">
+              <h1
+                data-text="Wendel Rey Salaum"
+                class="name glitch text-gray-100 bg-clip-text font-normal lg:text-9xl text-7xl tracking-wider font-effect-anaglyph custom-font-1"
+              >
+                Wendel Rey Salaum
+              </h1>
+            </div>
 
             <div>
-              <TyperComponent  baseText="A CyberSecurity Enthusiast"
-              search="A CyberSecurity Enthusiast"
-              :replace="['A CyberSecurity Enthusiast', 'A Passionate Programmer', 'An Idea Generator', 'A Code Writer',  'A Problem Solver', 'But most of the time, I am the Problem']"
-              :delay="2000"
-              :scrollSpeed="300" />
+              <TyperComponent
+                baseText="A CyberSecurity Enthusiast"
+                search="A CyberSecurity Enthusiast"
+                :replace="[
+                  'A CyberSecurity Enthusiast',
+                  'A Passionate Programmer',
+                  'An Idea Generator',
+                  'A Code Writer',
+                  'A Problem Solver',
+                  'But most of the time, I am the Problem',
+                ]"
+                :delay="2000"
+                :scrollSpeed="300"
+              />
             </div>
-            
           </div>
         </div>
       </div>
@@ -176,13 +194,12 @@
 </template>
 
 <script>
-import TyperComponent from './TyperComponent.vue';
-
+import TyperComponent from "./TyperComponent.vue";
 
 export default {
   components: {
     TyperComponent,
-  },  
+  },
   data() {
     return {
       isMenuOpen: false, // Reactive property to track menu state
@@ -203,9 +220,38 @@ export default {
 .name-logo {
   filter: drop-shadow(0px 5px 20px rgba(25, 190, 255, 0.747));
 }
-.name {
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 300; /* font-light */
+  color: white; /* Text color */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  transform: scale(1.05); /* Slightly scale up */
+  border-radius: 0.25rem; /* Round corners */
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* Dark text color for mobile */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.mobile-menu-link:hover {
+  background-color: rgba(156, 163, 175, 0.5); /* Light background on hover */
+}
+
+.glitch {
   animation: shadowMove 4s linear infinite;
 }
+
 @keyframes shadowMove {
   0% {
     filter: drop-shadow(-100px 0px 100px rgba(25, 190, 255, 0.747));
@@ -236,30 +282,4 @@ export default {
   }
 }
 
-.nav-link {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 300; /* font-light */
-  color: white; /* Text color */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
-  transform: scale(1.05); /* Slightly scale up */
-  border-radius: 0.25rem; /* Round corners */
-}
-
-.mobile-menu-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 600; /* font-semibold */
-  color: #1f2937; /* Dark text color for mobile */
-  transition: background-color 0.3s; /* Smooth transition */
-}
-
-.mobile-menu-link:hover {
-  background-color: rgba(156, 163, 175, 0.5); /* Light background on hover */
-}
 </style>

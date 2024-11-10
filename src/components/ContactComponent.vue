@@ -10,10 +10,12 @@
         Feel free to reach out by sending an email or message. I’d love to hear
         from you!
       </p>
-      <div v-show="toggled" class="mt-8 max-w-xl mx-auto">
+      <div v-show="toggled" class="mt-8 max-w-2xl mx-auto">
         <form @submit.prevent="submitForm" class="space-y-6" ref="myForm">
           <div>
-            <label for="email_id" class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
+            <label
+              for="email_id"
+              class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
               >Email</label
             >
             <div class="mt-1">
@@ -26,12 +28,16 @@
                 required
                 class="block w-full px-4 py-3 bg-white text-black placeholder-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Your email"
+                minlength="8"
+                maxlength="25"
               />
             </div>
           </div>
 
           <div>
-            <label for="from_name" class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
+            <label
+              for="from_name"
+              class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
               >Name</label
             >
             <div class="mt-1">
@@ -42,12 +48,16 @@
                 required
                 class="block w-full px-4 py-3 bg-white text-black placeholder-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Your name"
+                minlength="5"
+                maxlength="25"
               />
             </div>
           </div>
 
           <div>
-            <label for="message" class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
+            <label
+              for="message"
+              class="block sm:text-2xl text-lg text-white font-extrabold font-effect-anaglyph"
               >Message</label
             >
             <div class="mt-1">
@@ -59,6 +69,8 @@
                 required
                 class="block w-full px-4 py-3 bg-white text-black placeholder-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Your message"
+                minlength="10"
+                maxlength="200"
               ></textarea>
             </div>
           </div>
@@ -88,13 +100,13 @@
 export default {
   data() {
     return {
-      form :{
-        from_name: '',
-        email_id: '',
-        message: '',
+      form: {
+        from_name: "",
+        email_id: "",
+        message: "",
       },
       toggled: false,
-      statusMessage: ''
+      statusMessage: "",
     };
   },
   methods: {
@@ -104,32 +116,35 @@ export default {
     async submitForm() {
       // Create FormData object and append form inputs and EmailJS parameters
       const formData = new FormData(this.$refs.myForm);
-      formData.append('service_id', 'service_q6qln5q');
-      formData.append('template_id', 'template_4k3bwlt');
-      formData.append('user_id', 'H2450ePDW3hgk2r22');
+      formData.append("service_id", process.env.VUE_APP_EMAILJS_SERVICE_ID);
+      formData.append("template_id", process.env.VUE_APP_EMAILJS_TEMPLATE_ID);
+      formData.append("user_id", process.env.VUE_APP_EMAILJS_USER_ID);
 
-      for (const [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`)
-      }
+      // for (const [key, value] of formData.entries()) {
+      //   console.log(`${key}: ${value}`);
+      // }
       try {
-        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
-          method: 'POST',
-          body: formData
-        });
+        const response = await fetch(
+          "https://api.emailjs.com/api/v1.0/email/send-form",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
-          this.statusMessage = 'Your mail is sent!';
+          this.statusMessage = "Your mail is sent!";
           alert(this.statusMessage);
-          this.form = { name: '', email: '', message: '' }; // Reset the form
+          this.form = { name: "", email: "", message: "" }; // Reset the form
         } else {
-          this.statusMessage = 'Failed to send email. Please try again later.';
+          this.statusMessage = "Failed to send email. Please try again later.";
           alert(this.statusMessage);
-          console.error('EmailJS error:', response.statusText);
+          console.error("EmailJS error:", response.statusText);
         }
       } catch (error) {
-        this.statusMessage = 'An error occurred. Please try again later.';
+        this.statusMessage = "An error occurred. Please try again later.";
         alert(this.statusMessage);
-        console.error('EmailJS error:', error);
+        console.error("EmailJS error:", error);
       }
     },
   },
